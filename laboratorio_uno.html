@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab1</title>
     <style>
-        #customers {
+        #customers, #customers_dos {
           font-family: Arial, Helvetica, sans-serif;
           border-collapse: collapse;
           width: 100%;
         }
 
-        #customers td, #customers th {
+        #customers td, #customers th, #customers_dos td, #customers_dos th {
           border: 1px solid #ddd;
           padding: 8px;
         }
@@ -21,13 +21,18 @@
 
         #customers tr:hover {background-color: #ddd;}
 
-        #customers th {
+        #customers_dos tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers_dos tr:hover {background-color: #ddd;}
+
+        #customers th, #customers_dos th {
           padding-top: 12px;
           padding-bottom: 12px;
           text-align: left;
           background-color: #04AA6D;
           color: white;
         }
+
         </style>
 </head>
 <body>
@@ -91,7 +96,8 @@
             <li>Nombre de dominio: es el nombre del sitio web, como "google.com" o "facebook.com".</li>
             <li>Ruta: es la ubicación específica del recurso dentro del sitio web, como "/search" o "/profile".</li>
             <li>Parámetros: son valores opcionales que se utilizan para personalizar la solicitud, como "?q=term" para una búsqueda.</li>
-            <li>Anclaje: es una ubicación específica dentro de una página web, identificada por "#anchor".</li>
+            <li>Etiqueta: Este elemento se añade después del símbolo “#” y permite hacer scroll hasta una parte exacta de la URL.
+              .</li>
            </ol></td>
         </tr>
         <tr>
@@ -138,9 +144,10 @@
             Algunos ejemplos son:
 
             <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
-                <li style="margin-left:2em">El atributo "align" en la mayoría de los elementos, como "img", "table", "div", entre otros. En su lugar, se recomienda utilizar CSS para definir la alineación.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">Los elementos "frame" y "frameset" que se utilizaban para crear diseños de sitios web con marcos. En su lugar, se recomienda utilizar elementos HTML y CSS modernos para lograr el mismo resultado.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">El atributo "bgcolor" que se utilizaba para definir el color de fondo de una página o un elemento. En su lugar, se recomienda utilizar CSS para definir los estilos de fondo.</li>
+                <li style="margin-left:2em">dir: Reemplazado por el tag HTML ul</li>
+                <li style="margin-left:2em; padding-bottom: 0;">menu: Reemplazado por el tag HTML ul.</li>
+                <li style="margin-left:2em; padding-bottom: 0;">isindex: Reemplazado por el tag HTML input.</li>
+                <li style="margin-left:2em; padding-bottom: 0;">center, font, s, strike, u</li>
             </ol>
         </td>
         </tr>
@@ -182,7 +189,7 @@
     </ul>
 
     <h3>Sobre el ciclo de vida y desarrollo de los sistemas de información:</h3>
-    <table id="customers">
+    <table id="customers_dos">
       <tr>
         <th>Company</th>
         <th>Contact</th>
@@ -196,6 +203,18 @@
         <td>El ciclo de desarrollo de sistemas de información es un proceso estructurado que consta de seis etapas: identificación de problemas o necesidades, análisis de requisitos, diseño del sistema, implementación del sistema, pruebas del sistema y mantenimiento y evolución del sistema. Es un proceso iterativo que implica volver a las etapas anteriores en caso de que se encuentren problemas o se necesiten cambios adicionales. El objetivo principal es garantizar que el sistema de información desarrollado cumpla con los requisitos del usuario, sea eficiente y efectivo, y proporcione un valor agregado para la organización.</td>
       </tr>
     </table>
+
+    <h4>Referencias:</h4>
+    <ul>
+      <li>BBC. (n.d.). ¿Cuál es la diferencia entre internet y la web? (Y por qué muchos Las confunden). BBC News Mundo. Retrieved February 14, 2023, from https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,asienta%20sobreesa%20red%20de%20computadoras. </li>
+      <li>Cuáles son las partes de una URL: Blog: Hosting plus mexico. Hosting Plus. (2021, July 11). Retrieved February 14, 2023, from https://www.hostingplus.mx/blog/cuales-son-las-partes-de-una-url/ </li>
+      <li>Morales, W. (2021, June 1). Métodos http - post, get, put, Delete. Estilo Web. Retrieved February 14, 2023, from http://estilow3b.com/metodos-http-post-get-put-delete/ </li>
+      <li>Get vs. post: Los Dos Métodos de Petición HTTP Más conocidos Cara a cara. IONOS Digital Guide. (n.d.). Retrieved February 14, 2023, from https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/get-vs-post/ </li>
+      <li>05.Tags y atributos desaprobados en html - todo HTML. 05.Tags y atributos desaprobados en HTML - TODO HTML. (n.d.). Retrieved February 14, 2023, from https://sites.google.com/site/dwebhtml/reference/deprecated </li>
+      <li>V., B. (2022, December 21). La diferencia entre HTML Y HTML5. Tutoriales Hostinger. Retrieved February 14, 2023, from https://www.hostinger.mx/tutoriales/diferencia-entre-html-y-html5 </li>
+      <li>11 tablas. Tablas en documentos HTML. (n.d.). Retrieved February 14, 2023, from http://html.conclase.net/w3c/html401-es/struct/tables.html </li>
+      <li>Controles de formulario originales - aprende sobre desarrollo web: MDN. Aprende sobre desarrollo web | MDN. (n.d.). Retrieved February 14, 2023, from https://developer.mozilla.org/es/docs/Learn/Forms/Basic_native_form_controls </li>
+    </ul>
 
     <footer>
         <h5>Visual Studio Code</h5>
