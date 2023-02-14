@@ -1,0 +1,141 @@
+body {
+    background-color: rgba(129, 129, 127, 0.214);
+    font-family: 'Courier Prime', monospace;
+    margin: 0;
+}
+
+header {
+    background-color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.presentacion {
+ text-align: center;
+  font-family: arial;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.imagen_sebas {
+    display: block;
+  width: 250px;
+  height: 280px;
+  margin: 0 auto 70px auto;
+  border-radius: 50%;
+}
+
+.biografia {
+    width: 70%;
+    margin: 0 auto;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+iframe {
+    display: block;
+    margin-top: 40px;
+    box-shadow:
+      0 0 0 2px #000,
+      0 0 0 3px #999,
+      0 0 0 9px #fa0,
+      0 0 0 10px #666,
+      0 0 0 16px #fd0,
+      0 0 0 18px #000;
+  }
+
+  .datos {
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .redes {
+    width: 300px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  .mis_gustos {
+    text-align: center;
+    margin-top: 40px;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .row1 {
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  .footer {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+  }
+
+/* CSS */
+.button-19 {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}
