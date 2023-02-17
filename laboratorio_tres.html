@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <!-- <link rel="stylesheet" href="debug.css"> -->
+
     <title>Lab1</title>
     <style>
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
         #customers, #customers_dos {
           font-family: Arial, Helvetica, sans-serif;
           border-collapse: collapse;
@@ -38,58 +49,97 @@
 </head>
 <body>
 
-    <header>
-        <h1 class="presentacion">Hola Mundo.... Soy Sebastian</h1>
-    </header>
+    <!-- .hero -->
+		<section class="hero has-background-black">
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="presentacion has-text-white is-size-4">Hola Mundo.... Soy Sebastian</h1>
+				</div>
+			</div>
+		</section>
+		<!-- /.hero -->
 
-    <p class="biografia">Estudio ITC en el Tecnologico de Monterrey, lo que mas me gusta de mi carrera es el desarrollo web, aunque tambien me interesaria meterme al mundo de desarrollo de videojuegos. Siempre me han gustado muchos los deportes, he jugado baseball, futbol, tenis, badminton, pero, el que practico a la actualidad es el padel.</p>
+    <section class="section">
+      <div class="container">
+        <div class="content is-small">
+          <h2>Un poco de mi:</h2>
+          <p>Estudio ITC en el Tecnologico de Monterrey, lo que mas me gusta de mi carrera es el desarrollo web, aunque tambien me interesaria meterme al mundo de desarrollo de videojuegos. Siempre me han gustado muchos los deportes, algunos que he practicado antes son:</p>
+          <ul>
+            <li>Padel</li>
+            <li>Tenis</li>
+            <li>Badminton</li>
+            <li>Futbol</li>
+            <li>Baseball</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <img class="imagen_sebas" alt="imagen-sebastian" src="/foto-sebas.jpeg">
 
+    <div class="tile is-ancestor">
+      <div class="tile is-4 is-vertical is-parent">
+        <div class="tile is-child box">
+          <div class="card has-background-light margin-less">
+            <div class="card-content">
+                <h1 class="title is-4">Mis Datos:</h1>
+                <ul>
+                    <li><span class="has-text-weight-semibold">Nombre:</span> Sebastian Armando Flores Lemus</li>
+                    <li><span class="has-text-weight-semibold">Matricula:</span> A01709229</li>
+                    <li><span class="has-text-weight-semibold">Correo:</span> A01709229@tec.mx</li>
+                </ul>
+            </div>
+            <footer class="card-footer has-text-weight-bold">
+              <p class="card-footer-item">
+                <span>
+                  <a href="https://twitter.com/codinghorror/status/506010907021828096">Linked In</a>
+                </span>
+              </p>
+              <p class="card-footer-item ">
+                <span>
+                  <a href="#">Instagram</a>
+                </span>
+              </p>
+            </footer>
+          </div>
+        </div>
+        <div class="tile is-child box">
+          <div class="card">
+            <div class="card-content">
+              <div class="content">
+                <h1 class="title is-4">Mis Gustos:</h1>
 
-    <div class="datos">
-      <h2>Mis Datos:</h2>
-      <ul>
-          <li style="list-style: none; padding: 0;">Nombre: Sebastian Armando Flores Lemus</li>
-          <li style="list-style: none;">Matricula: A01709229</li>
-          <li style="list-style: none;">Correo: A01709229@tec.mx</li>
-      </ul>
-    </div>
-
-    <h2 style="text-align: center; margin-top: 40px;">Mis Redes</h2>
-
-    <div class="redes">
-
-        <form action="https://www.linkedin.com/in/sebasti%C3%A1n-armando-flores-lemus-66530324b/">
-            <input class="button-19" target="_blank" type="submit" value="LinkedIn">
-        </form>
-
-        <form action="https://www.instagram.com/seb.flores02/">
-            <input target="_blank" class="button-19" type="submit" value="Instagram">
-        </form>
-    </div>
-
-    <div class="mis_gustos">
-      <h2>Mis Gustos:</h2>
-
-      <ul>
-          <li style="list-style: none;">Jugar Padel</li>
-          <li style="list-style: none;">Jugar Ajedrez</li>
-          <li style="list-style: none;">Cocinar</li>
-          <li style="list-style: none;">Ver deportes en vivo</li>
-      </ul>
-    </div>
-
-    <div class="row1">
-
-      <h1 style="text-align: center; margin-top: 40px;">Mi Musica favorita</h1>
-
-      <div class="container-iframe">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4mGzX87Pxyx6U48FdW3dSi?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                <ul>
+                    <li>Jugar Padel</li>
+                    <li>Jugar Ajedrez</li>
+                    <li>Cocinar</li>
+                    <li>Ver deportes en vivo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="tile is-parent">
+        <div class="tile is-child box">
+          <div class="card">
+            <div class="card-content">
+              <h1 class="title is-4">Mi Musica:</h1>
+              <iframe style="border-radius:2px" src="https://open.spotify.com/embed/playlist/4mGzX87Pxyx6U48FdW3dSi?utm_source=generator" width="100%" height="458" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <footer class="card-footer has-text-weight-bold">
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <section class="section">
+      <div class="container">
+        <div>
+      </div>
+    </section>
 
-    <h3 style="text-align: center; margin-top: 40px;">Preguntas a responder</h3>
+    <h1  class="title is-4 has-text-centered">Preguntas a responder</h1>
 
     <table id="customers">
         <tr>
@@ -197,11 +247,7 @@
         </tr>
       </table>
 
-    <ul>
-
-    </ul>
-
-    <h3 style="text-align: center; margin-top: 40px;">Sobre el ciclo de vida y desarrollo de los sistemas de información:</h3>
+    <h1 class="title is-5 has-text-centered">Sobre el ciclo de vida y desarrollo de los sistemas de información:</h1>
     <table id="customers_dos">
       <tr>
         <th>Company</th>
@@ -217,7 +263,7 @@
       </tr>
     </table>
 
-    <h3 style="text-align: center; margin-top: 40px;">Preguntas Lab2:</h3>
+    <h1 class="title is-5 has-text-centered">Preguntas Lab2:</h1>
     <table id="customers_dos">
       <tr>
         <th>Company</th>
@@ -252,11 +298,13 @@
 
     </table>
 
-
-
-    <h4  style="text-align: center; margin-top: 40px;">Referencias:</h4>
-    <ul>
-      <li>BBC. (n.d.). ¿Cuál es la diferencia entre internet y la web? (Y por qué muchos Las confunden). BBC News Mundo. Retrieved February 14, 2023, from https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,asienta%20sobreesa%20red%20de%20computadoras. </li>
+    <section class="section">
+      <div class="container">
+        <div class="content">
+<h1 class="title is-5 has-text-centered">Referencias:</h1>
+    <ul class="is-size-7">
+      <li>BBC. (n.d.). ¿Cuál es la diferencia entre internet y la web? (Y por qué muchos Las confunden). BBC News Mundo. Retrieved February 14, 2023, from
+        https://www.bbc.com/mundo/noticias-47538812#:~:text=Internet%20es%20una%20inmensa%20red,asienta%20sobreesa%20red%20de%20computadoras. </li>
       <li>Cuáles son las partes de una URL: Blog: Hosting plus mexico. Hosting Plus. (2021, July 11). Retrieved February 14, 2023, from https://www.hostingplus.mx/blog/cuales-son-las-partes-de-una-url/ </li>
       <li>Morales, W. (2021, June 1). Métodos http - post, get, put, Delete. Estilo Web. Retrieved February 14, 2023, from http://estilow3b.com/metodos-http-post-get-put-delete/ </li>
       <li>Get vs. post: Los Dos Métodos de Petición HTTP Más conocidos Cara a cara. IONOS Digital Guide. (n.d.). Retrieved February 14, 2023, from https://www.ionos.es/digitalguide/paginas-web/desarrollo-web/get-vs-post/ </li>
@@ -265,6 +313,18 @@
       <li>11 tablas. Tablas en documentos HTML. (n.d.). Retrieved February 14, 2023, from http://html.conclase.net/w3c/html401-es/struct/tables.html </li>
       <li>Controles de formulario originales - aprende sobre desarrollo web: MDN. Aprende sobre desarrollo web | MDN. (n.d.). Retrieved February 14, 2023, from https://developer.mozilla.org/es/docs/Learn/Forms/Basic_native_form_controls </li>
     </ul>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p class="has-text-black"><strong>Laboratorio 5 </strong></p>
+        <p class="has-text-black">Uso de framework <strong>Bulma</strong></p>
+        <p class="has-text-black">Aplicado en el laboratio 2 - uso de css</p><br>
+          <a href="https://visualstudio.microsoft.com/">https://visualstudio.microsoft.com/</a>
+
+      </div>
+    </footer>
 
     <footer>
       <div class="footer">

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular el area y circunferencia de un circulo :)</h1>
+    <label for="radius">Inserta el radio: </label>
+    <input type="text" id="radius"><br>
+    <!--<label for="radius">Inserta el valor de pi: </label>-->
+    <!--<input type="text" id="pi"><br>-->
+    <button onclick="getArea()">Calcular area</button>
+    <p id="res1"></p>
+    <button onclick="getCircumference()">Calcular circunferencia</button>
+    <p id="res2"></p>
+
+
+    <script>
+
+        /*
+        // Ejercicio 1
+        let numero = Number(window.prompt("Ingresa un numero: "));
+        cuadrados(numero);
+        cubos(numero);
+
+        function cuadrados(numero){
+            document.write(`<h2>Los cuadrados de 1 hasta el numero ${numero} son:</h2>`);
+            document.write("<table>");
+            for(let i = 1; i <= numero; i++){
+                document.write("<tr>");
+                document.write(`<td>${i}</td><td>${i*i}</td>`);
+                document.write("</tr>");
+            }
+            document.write("</table>");
+            console.assert(numero >= 0, "El número ingresado no es válido");
+        }
+
+        function cubos(numero){
+            document.write(`<h2>Los cubos de 1 hasta el numero ${numero} son:</h2>`);
+            document.write("<table>");
+            for(let i = 1; i <= numero; i++){
+                document.write("<tr>");
+                document.write(`<td>${i}</td><td>${i*i*i}</td>`);
+                document.write("</tr>");
+            }
+            document.write("</table>");
+            console.assert(numero >= 0, "El número ingresado no es válido");
+        }
+
+        // Estilos
+        document.write(`
+        <style>
+            table {
+            border-collapse: collapse;
+            margin: 20px 0;
+            }
+            td {
+            border: 1px solid black;
+            padding: 5px;
+            }
+            h2 {
+            margin-bottom: 5px;
+            }
+        </style>
+        `);
+
+
+
+
+        // Segundo Ejercicio
+
+        let num1 = Math.floor(Math.random()*20)+1
+        let num2 = Math.floor(Math.random()*20)+1
+        let suma = num1 + num2
+
+        let startTime = Date.now();
+
+        let resultado = Number(window.prompt(`Ingresa el resultado de ${num1} + ${num2}`))
+
+        let endTime = Date.now()
+
+        let tiempo = (endTime - startTime) / 1000
+
+        if(resultado === suma){
+            document.write(`Respuesta correcta.<br>`)
+        } else {
+            document.write(`Respuesta incorrecta.<br>`)
+        }
+        document.write(`El tiempo de respuesta fue ${tiempo}<br>`)
+        console.assert(resultado === suma, "La respuesta ingresada no es correcta")
+
+
+
+
+        // ejercicio 3
+        let numeros = [11, 22, 33,4, 0, 0, -1, -2, -3]
+        contador(numeros)
+
+        function contador(array){
+            let numerosNegativos = 0
+            let ceros = 0
+            let numerosPositivos = 0
+            for(numero of numeros){
+                if(numero < 0){
+                    numerosNegativos++
+                }
+                else if(numero == 0){
+                    ceros++
+                } else {
+                    numerosPositivos++
+                }
+            }
+            document.write(`La cantidad de numeros negativos es: ${numerosNegativos}<br>`)
+            document.write(`La cantidad de ceros es: ${ceros}<br>`)
+            document.write(`La cantidad de numeros positivos es: ${numerosPositivos}<br>`)
+
+            // asserts
+            console.assert(numerosNegativos === 3, "El número de negativos es incorrecto");
+            console.assert(ceros === 2, "El número de ceros es incorrecto");
+            console.assert(numerosPositivos === 4, "El número de positivos es incorrecto");
+        }
+
+
+
+        /*
+        // ejercicio 4
+        const matriz = [
+            [1, 1, 1],
+            [4, 5, 6],
+            [7, 7, 7]
+        ];
+        const promediosDeMatriz = promedios(matriz);
+        document.write(promediosDeMatriz); // [2, 5, 8]
+
+        function promedios(matriz) {
+            const promedios = [];
+
+            for (let i = 0; i < matriz.length; i++) {
+                let suma = 0;
+                for (let j = 0; j < matriz[i].length; j++) {
+                    suma += matriz[i][j];
+                }
+                const promedio = suma / matriz[i].length;
+                promedios.push(promedio);
+                }
+
+            return promedios;
+        }
+        */
+
+
+        /*
+        // Ejericio 5
+
+        //let numero = window.prompt("Ingresa un numero")
+        let number = window.prompt("Ingresa un Numero")
+        inverso(number)
+
+        function inverso(numero){
+            let array = numero.split('')
+            let reverse = array.reverse()
+            let res = reverse.join('')
+
+            document.write(Number(res))
+        }
+        */
+
+
+
+        // Problema 6
+        const pi = 3.14159
+
+        function Circle(radius) {
+            this.radius = radius;
+        }
+
+        Circle.prototype.getArea = function() {
+            let area = pi * this.radius * this.radius;
+            return area;
+        }
+
+        Circle.prototype.getCircumference = function() {
+            let circumference = 2 * pi * this.radius;
+            return circumference;
+        }
+
+        function getArea() {
+            let radiusEl = document.getElementById("radius").value;
+            const circle1 = new Circle(parseFloat(radiusEl), parseFloat(pi));
+            let area = circle1.getArea();
+            let res1 = document.getElementById("res1");
+            res1.innerHTML = `The area of the circle is: ${area}`;
+        }
+
+        function getCircumference() {
+            let radiusEl = document.getElementById("radius").value;
+            const circle1 = new Circle(parseFloat(radiusEl), parseFloat(pi));
+            let circumference = circle1.getCircumference();
+            let res2 = document.getElementById("res2");
+            res2.innerHTML = `The circumference of the circle is: ${circumference}`;
+        }
+
+
+    </script>
+
+</body>
+</html>
