@@ -59,28 +59,42 @@
 		</section>
 		<!-- /.hero -->
 
-    <section class="section">
-      <div class="container">
-        <div class="content is-small">
-          <h2>Un poco de mi:</h2>
-          <p>Estudio ITC en el Tecnologico de Monterrey, lo que mas me gusta de mi carrera es el desarrollo web, aunque tambien me interesaria meterme al mundo de desarrollo de videojuegos. Siempre me han gustado muchos los deportes, algunos que he practicado antes son:</p>
-          <ul>
-            <li>Padel</li>
-            <li>Tenis</li>
-            <li>Badminton</li>
-            <li>Futbol</li>
-            <li>Baseball</li>
-          </ul>
+    <div class="columns center">
+      <div class="column is-three-quarters">
+
+        <div class="section tile is-ancestor">
+          <div class="tile is-4 is-vertical is-parent">
+            <div class="tile is-child box">
+              <figure class="image">
+                <img alt="imagen-sebastian" src="/foto-sebas.jpeg">
+              </figure>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-child box">
+              <div class="content is-small">
+                <h2>Un poco de mi:</h2>
+                <p>Estudio ITC en el Tecnologico de Monterrey, lo que mas me gusta de mi carrera es el desarrollo web, aunque tambien me interesaria meterme al mundo de desarrollo de videojuegos. Siempre me han gustado muchos los deportes, algunos que he practicado antes son:</p>
+                <ul>
+                  <li>Padel</li>
+                  <li>Tenis</li>
+                  <li>Badminton</li>
+                  <li>Futbol</li>
+                  <li>Baseball</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <img class="imagen_sebas" alt="imagen-sebastian" src="/foto-sebas.jpeg">
+    </div>
 
+    <div class="section">
     <div class="tile is-ancestor">
       <div class="tile is-4 is-vertical is-parent">
         <div class="tile is-child box">
-          <div class="card has-background-light margin-less">
+          <div class="card has-background-light">
             <div class="card-content">
                 <h1 class="title is-4">Mis Datos:</h1>
                 <ul>
@@ -104,7 +118,7 @@
           </div>
         </div>
         <div class="tile is-child box">
-          <div class="card">
+          <div class="card  has-background-light">
             <div class="card-content">
               <div class="content">
                 <h1 class="title is-4">Mis Gustos:</h1>
@@ -122,7 +136,7 @@
       </div>
       <div class="tile is-parent">
         <div class="tile is-child box">
-          <div class="card">
+          <div class="card  has-background-light">
             <div class="card-content">
               <h1 class="title is-4">Mi Musica:</h1>
               <iframe style="border-radius:2px" src="https://open.spotify.com/embed/playlist/4mGzX87Pxyx6U48FdW3dSi?utm_source=generator" width="100%" height="458" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -132,171 +146,173 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <section class="section">
-      <div class="container">
-        <div>
-      </div>
-    </section>
+    <div class="section ">
+      <h1  class="title is-4 has-text-centered">Preguntas a responder</h1>
 
-    <h1  class="title is-4 has-text-centered">Preguntas a responder</h1>
+      <table id="customers">
+          <tr>
+            <th>Company</th>
+            <th>Contact</th>
+          </tr>
+          <tr>
+            <td>¿Cuál es la diferencia entre Internet y la World Wide Web?: </td>
+            <td>El Internet es la red de dispositivos conectadas entre si que permite el intercambio de información y la comunicación entre los dispositivos. La World Wide Web es un "servicio" que funciona gracias al Internet y permite acceder y compartir información mediante páginas web, imágenes, entre otros.</td>
+          </tr>
+          <tr>
+            <td>¿Cuáles son las partes de un URL?:
+            <td>
+              La URL cuenta con varias partes, que se pueden describir de la siguiente manera:
+              <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+              <li>Protocolo: es la forma en que se accede al recurso, como "http" o "https".</li>
+              <li>Nombre de dominio: es el nombre del sitio web, como "google.com" o "facebook.com".</li>
+              <li>Ruta: es la ubicación específica del recurso dentro del sitio web, como "/search" o "/profile".</li>
+              <li>Parámetros: son valores opcionales que se utilizan para personalizar la solicitud, como "?q=term" para una búsqueda.</li>
+              <li>Etiqueta: Este elemento se añade después del símbolo “#” y permite hacer scroll hasta una parte exacta de la URL.
+                .</li>
+             </ol></td>
+          </tr>
+          <tr>
+            <td>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?:</td>
+            <td>
+              Los métodos HTTP se utilizan para indicar la acción que se quiere realizar en el servidor web. Algunos metodos son:
+              <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+              <li style="margin-left:2em">GET: solicita un recurso específico del servidor. La respuesta incluye el recurso solicitado y la información de estado de la respuesta.</li>
+              <li style="margin-left:2em; padding-bottom: 0;">HEAD: solicita la misma información que GET, pero sin incluir el cuerpo del mensaje. Se utiliza para obtener información sobre un recurso, como su tamaño o fecha de última modificación, sin descargar todo el contenido.</li>
+              <li style="margin-left:2em; padding-bottom: 0;">POST: envía datos al servidor para crear o actualizar un recurso. La respuesta incluye la información de estado y, opcionalmente, los datos creados o actualizados.</li>
+              <li style="margin-left:2em; padding-bottom: 0;">PUT: actualiza un recurso existente en el servidor con los datos proporcionados en la solicitud. La respuesta incluye la información de estado y, opcionalmente, los datos actualizados.</li>
+              <li style="margin-left:2em; padding-bottom: 0;">PATCH: actualiza parcialmente un recurso existente en el servidor con los datos proporcionados en la solicitud. La respuesta incluye la información de estado y, opcionalmente, los datos actualizados.</li>
+              <li style="margin-left:2em; padding-bottom: 0;">DELETE: elimina un recurso existente en el servidor. La respuesta incluye la información de estado y, opcionalmente, los datos eliminados.</li>
+             </ol></td>
+          </tr>
+          <tr>
+            <td>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?:</td>
+            <td>Para enviar un formulario HTML, generalmente se utiliza el método HTTP POST. Esto se debe a que el método POST se utiliza para enviar datos al servidor para crear o actualizar un recurso, como en este caso, que se están enviando datos de un usuario y contraseña para autenticación. Además, el método POST envía los datos en el cuerpo de la solicitud, lo que permite enviar más información que con el método GET.
 
-    <table id="customers">
+              El método GET también se puede utilizar para enviar datos de formulario, pero no se recomienda tanto, el método HTTP POST es el más adecuado para enviar formularios HTML que contienen datos sensibles, ya que permite enviar más información que con GET y no expone los datos en la URL.</td>
+          </tr>
+          <tr>
+            <td>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?:</td>
+            <td>HCuando se accede a una página a través de un URL en un navegador web, generalmente se utiliza el método HTTP GET. El método GET se utiliza para solicitar un recurso específico del servidor, como una página web, y la respuesta incluye el recurso solicitado y la información de estado de la respuesta.
+
+              Al ingresar un URL en un navegador, se envía una solicitud GET al servidor web que aloja la página correspondiente. El servidor procesa la solicitud, busca la página correspondiente y la envía de vuelta al navegador como respuesta.</td>
+          </tr>
+          <tr>
+            <td>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?:</td>
+            <td>EL codigo 200 no significa un error, sino todo lo contrario. Cuando un servidor web devuelve una respuesta HTTP con el código 200, indica que la solicitud del cliente fue procesada correctamente y se devolvió una respuesta exitosa. El código 200 es el código de estado que indica que la solicitud fue exitosa y que se envió la respuesta solicitada.</td>
+          </tr>
+          <tr>
+            <td>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?:</td>
+            <td>Como desarrollador web, es importante garantizar que las páginas web estén disponibles y sean accesibles para los usuarios. Si un usuario encuentra un error 404 en una página, es una indicación de que algo ha salido mal y que la página no está disponible. Como resultado, es responsabilidad del desarrollador investigar el problema y corregirlo para que la página web sea accesible nuevamente.</td>
+          </tr>
+          <tr>
+            <td>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?:</td>
+            <td>Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500. El código de estado HTTP 500 indica un error interno del servidor, lo que significa que algo ha salido mal en el servidor y no se puede procesar la solicitud. También, estos errores pueden indicar un problema de seguridad potencial, como una vulnerabilidad en el servidor o en la aplicación web.</td>
+          </tr>
+          <tr>
+            <td>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados:</td>
+            <td>Que un atributo HTML5 está o desaprobado significa que se ha desaconsejado su uso y se recomienda utilizar una alternativa. Aunque estos atributos aún funcionan en los navegadores, pueden dejar de funcionar en versiones futuras o ya no ser compatibles con las últimas especificaciones.
+
+              Algunos ejemplos son:
+
+              <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+                  <li style="margin-left:2em">dir: Reemplazado por el tag HTML ul</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">menu: Reemplazado por el tag HTML ul.</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">isindex: Reemplazado por el tag HTML input.</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">center, font, s, strike, u</li>
+              </ol>
+          </td>
+          </tr>
+          <tr>
+            <td>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?:</td>
+            <td>HTML5 es una versión actualizada de HTML 4 con varias diferencias significativas. Algunas de las diferencias son:
+
+              <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+                  <li style="margin-left:2em">Soporte multimedia mejorado: HTML5 proporciona soporte nativo para la reproducción de video y audio, lo que significa que ya no es necesario utilizar complementos de terceros como Flash para reproducir estos tipos de contenido.</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">Nuevos elementos y atributos: HTML5 introduce varios nuevos elementos y atributos que mejoran la semántica y la accesibilidad de los sitios web. Por ejemplo, los nuevos elementos "header", "footer" y "section" ayudan a definir la estructura de una página de manera más clara.</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">Soporte de aplicaciones web: HTML5 introduce una serie de tecnologías que permiten a los desarrolladores crear aplicaciones web que se ejecutan directamente en un navegador sin necesidad de complementos. Estas tecnologías incluyen el almacenamiento local, la API de geolocalización y la API de Canvas.</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">Mayor flexibilidad: HTML5 es más flexible en términos de sintaxis y estructura de documento, lo que significa que es más fácil escribir y leer el código HTML.</li>
+              </ol></td>
+          </tr>
+          <tr>
+            <td>¿Qué componentes de estructura y estilo tiene una tabla?:</td>
+            <td>Una tabla en HTML consta de varios componentes de estructura y estilo, incluyendo el elemento "table", los elementos "thead", "tbody" y "tfoot", el elemento "tr", los elementos "th" y "td", y los atributos "colspan" y "rowspan". Los estilos CSS se pueden utilizar para personalizar el aspecto de la tabla, incluyendo el tamaño de fuente, el color de fondo, el espaciado de celda y la alineación de texto. Los componentes de estructura y estilo permiten al desarrollador crear tablas personalizadas y de aspecto profesional para mostrar datos de manera clara y organizada.</td>
+          </tr>
+          <tr>
+            <td>¿Cuáles son los principales controles de una forma HTML5?:</td>
+            <td>HTML5 tiene una variedad de controles para que los desarrolladores elijan el que mejor se adapte a sus necesidades. Algunos ejemplos son:
+              <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+                  <li style="margin-left:2em">Cajas de texto: Permiten al usuario ingresar texto en un solo campo.
+                  </li>
+                  <li style="margin-left:2em; padding-bottom: 0;">Áreas de texto: Permiten al usuario ingresar texto en un campo más grande que una caja de texto.</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">Botones de opción: Permiten al usuario seleccionar una opción entre varias.</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">Botones de radio: Permiten al usuario seleccionar una única opción de un conjunto de opciones.</li>
+                  <li style="margin-left:2em; padding-bottom: 0;">Entre otros...</li>
+              </ol></td>
+          </tr>
+          <tr>
+            <td>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?(Google):</td>
+            <td>Google tiene un buen soporte para HTML5 en su navegador web, Google Chrome, así como en muchas de sus herramientas para desarrolladores, como Google Web Designer y Google Analytics. Además, Google ha adoptado muchas de las características de HTML5 en sus productos y servicios para proporcionar una mejor experiencia web para los usuarios.</td>
+          </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h1 class="title is-5 has-text-centered">Sobre el ciclo de vida y desarrollo de los sistemas de información:</h1>
+        <table id="customers_dos">
+          <tr>
+            <th>Company</th>
+            <th>Contact</th>
+          </tr>
+          <tr>
+            <td>¿Cuál es el ciclo de vida de los sistemas de información?:</td>
+            <td>El ciclo de vida de los sistemas de información es un proceso estructurado que se utiliza para desarrollar, implementar y mantener sistemas de información. Las etapas comunes son: planificación, análisis, diseño, desarrollo, pruebas, implementación y mantenimiento. Es un proceso continuo que evoluciona a medida que el sistema requiere actualizaciones y mejoras.</td>
+          </tr>
+          <tr>
+            <td>¿Cuál es el ciclo de desarrollo de sistemas de información?</td>
+            <td>El ciclo de desarrollo de sistemas de información es un proceso estructurado que consta de seis etapas: identificación de problemas o necesidades, análisis de requisitos, diseño del sistema, implementación del sistema, pruebas del sistema y mantenimiento y evolución del sistema. Es un proceso iterativo que implica volver a las etapas anteriores en caso de que se encuentren problemas o se necesiten cambios adicionales. El objetivo principal es garantizar que el sistema de información desarrollado cumpla con los requisitos del usuario, sea eficiente y efectivo, y proporcione un valor agregado para la organización.</td>
+          </tr>
+        </table>
+    </div>
+
+    <div class="section">
+      <h1 class="title is-5 has-text-centered">Preguntas Lab2:</h1>
+      <table id="customers_dos">
         <tr>
           <th>Company</th>
           <th>Contact</th>
         </tr>
         <tr>
-          <td>¿Cuál es la diferencia entre Internet y la World Wide Web?: </td>
-          <td>El Internet es la red de dispositivos conectadas entre si que permite el intercambio de información y la comunicación entre los dispositivos. La World Wide Web es un "servicio" que funciona gracias al Internet y permite acceder y compartir información mediante páginas web, imágenes, entre otros.</td>
-        </tr>
-        <tr>
-          <td>¿Cuáles son las partes de un URL?:
-          <td>
-            La URL cuenta con varias partes, que se pueden describir de la siguiente manera:
-            <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
-            <li>Protocolo: es la forma en que se accede al recurso, como "http" o "https".</li>
-            <li>Nombre de dominio: es el nombre del sitio web, como "google.com" o "facebook.com".</li>
-            <li>Ruta: es la ubicación específica del recurso dentro del sitio web, como "/search" o "/profile".</li>
-            <li>Parámetros: son valores opcionales que se utilizan para personalizar la solicitud, como "?q=term" para una búsqueda.</li>
-            <li>Etiqueta: Este elemento se añade después del símbolo “#” y permite hacer scroll hasta una parte exacta de la URL.
-              .</li>
-           </ol></td>
-        </tr>
-        <tr>
-          <td>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?:</td>
-          <td>
-            Los métodos HTTP se utilizan para indicar la acción que se quiere realizar en el servidor web. Algunos metodos son:
-            <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
-            <li style="margin-left:2em">GET: solicita un recurso específico del servidor. La respuesta incluye el recurso solicitado y la información de estado de la respuesta.</li>
-            <li style="margin-left:2em; padding-bottom: 0;">HEAD: solicita la misma información que GET, pero sin incluir el cuerpo del mensaje. Se utiliza para obtener información sobre un recurso, como su tamaño o fecha de última modificación, sin descargar todo el contenido.</li>
-            <li style="margin-left:2em; padding-bottom: 0;">POST: envía datos al servidor para crear o actualizar un recurso. La respuesta incluye la información de estado y, opcionalmente, los datos creados o actualizados.</li>
-            <li style="margin-left:2em; padding-bottom: 0;">PUT: actualiza un recurso existente en el servidor con los datos proporcionados en la solicitud. La respuesta incluye la información de estado y, opcionalmente, los datos actualizados.</li>
-            <li style="margin-left:2em; padding-bottom: 0;">PATCH: actualiza parcialmente un recurso existente en el servidor con los datos proporcionados en la solicitud. La respuesta incluye la información de estado y, opcionalmente, los datos actualizados.</li>
-            <li style="margin-left:2em; padding-bottom: 0;">DELETE: elimina un recurso existente en el servidor. La respuesta incluye la información de estado y, opcionalmente, los datos eliminados.</li>
-           </ol></td>
-        </tr>
-        <tr>
-          <td>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?:</td>
-          <td>Para enviar un formulario HTML, generalmente se utiliza el método HTTP POST. Esto se debe a que el método POST se utiliza para enviar datos al servidor para crear o actualizar un recurso, como en este caso, que se están enviando datos de un usuario y contraseña para autenticación. Además, el método POST envía los datos en el cuerpo de la solicitud, lo que permite enviar más información que con el método GET.
+          <td>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </td>
+          <td>!important es un arma de dos filos. Si tiene un uso importante para forzar un esitlo o cuando deseamos anular un estilo existente que esta ineterfiriendo o causando problemas con el codigo que tenemos.
 
-            El método GET también se puede utilizar para enviar datos de formulario, pero no se recomienda tanto, el método HTTP POST es el más adecuado para enviar formularios HTML que contienen datos sensibles, ya que permite enviar más información que con GET y no expone los datos en la URL.</td>
+            Pero, debemos de tener cuidado al usarlo ya que si lo usamos de manera inadecuada hacemos que el codigo sea mas dificil de leer y entender, pero mas importante aun mas complicado de mantener e inclusive puede causar conflictos con otros estilos.
+          </td>
         </tr>
         <tr>
-          <td>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?:</td>
-          <td>HCuando se accede a una página a través de un URL en un navegador web, generalmente se utiliza el método HTTP GET. El método GET se utiliza para solicitar un recurso específico del servidor, como una página web, y la respuesta incluye el recurso solicitado y la información de estado de la respuesta.
-
-            Al ingresar un URL en un navegador, se envía una solicitud GET al servidor web que aloja la página correspondiente. El servidor procesa la solicitud, busca la página correspondiente y la envía de vuelta al navegador como respuesta.</td>
-        </tr>
-        <tr>
-          <td>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?:</td>
-          <td>EL codigo 200 no significa un error, sino todo lo contrario. Cuando un servidor web devuelve una respuesta HTTP con el código 200, indica que la solicitud del cliente fue procesada correctamente y se devolvió una respuesta exitosa. El código 200 es el código de estado que indica que la solicitud fue exitosa y que se envió la respuesta solicitada.</td>
-        </tr>
-        <tr>
-          <td>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?:</td>
-          <td>Como desarrollador web, es importante garantizar que las páginas web estén disponibles y sean accesibles para los usuarios. Si un usuario encuentra un error 404 en una página, es una indicación de que algo ha salido mal y que la página no está disponible. Como resultado, es responsabilidad del desarrollador investigar el problema y corregirlo para que la página web sea accesible nuevamente.</td>
-        </tr>
-        <tr>
-          <td>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?:</td>
-          <td>Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500. El código de estado HTTP 500 indica un error interno del servidor, lo que significa que algo ha salido mal en el servidor y no se puede procesar la solicitud. También, estos errores pueden indicar un problema de seguridad potencial, como una vulnerabilidad en el servidor o en la aplicación web.</td>
-        </tr>
-        <tr>
-          <td>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados:</td>
-          <td>Que un atributo HTML5 está o desaprobado significa que se ha desaconsejado su uso y se recomienda utilizar una alternativa. Aunque estos atributos aún funcionan en los navegadores, pueden dejar de funcionar en versiones futuras o ya no ser compatibles con las últimas especificaciones.
-
-            Algunos ejemplos son:
-
+          <td>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</td>
+          <td>El fondo de pantalla es importante ya que mejora la interfaz y la experiencia del usaurio al usar una pagina. Pero, debemos de tener cuidado por ciertas razones como:
             <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
-                <li style="margin-left:2em">dir: Reemplazado por el tag HTML ul</li>
-                <li style="margin-left:2em; padding-bottom: 0;">menu: Reemplazado por el tag HTML ul.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">isindex: Reemplazado por el tag HTML input.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">center, font, s, strike, u</li>
-            </ol>
-        </td>
+              <li style="margin-left:2em">Velocidad de carga: Si la imagen es de alta resolucion, puede aumentar la velocidad de carga de manera significante y afectar negativamente en el rendimineto de la pagina.
+              </li>
+              <li style="margin-left:2em; padding-bottom: 0;">Visibilidad del contenido: Los colores, objetos y tonos de una imagen pueden interefrir con atributos, imagenes y textos en nuestra pagina. Ademas, no queremos distraer al usuario del contenido de la pagina que es lo mas importante.</li>
+              <li style="margin-left:2em; padding-bottom: 0;">Compatibilidad: Cabe mencionar que todos los dispositivos y los web browsers tienen diferentes configuraciones de colores, tamanos y resoluciones, en algunos aparatos se puede ver muy bien, pero en otros se puede sacrificar la estetica de la pagina.</li>
+          </ol>
+          </td>
         </tr>
         <tr>
-          <td>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?:</td>
-          <td>HTML5 es una versión actualizada de HTML 4 con varias diferencias significativas. Algunas de las diferencias son:
+          <td>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt? </td>
+          <td>Se recomienda utilizar unidades relativas como % para elementos adaptables, píxeles (px) para elementos fijos y puntos (pt) para elementos de impresión. La elección depende del contexto y del propósito de la propiedad de estilo.</td>
+        </tr>
+        <tr>
+          <td>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</td>
+          <td>El uso de una versión minimizada del CSS mejora el rendimiento del sitio al reducir el tamaño del archivo, disminuir la carga en el servidor, mejorar la caché del navegador y acelerar el tiempo de renderizado, lo que se traduce en una carga más rápida de la página y una mejor experiencia del usuario.</td>
+        </tr>
 
-            <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
-                <li style="margin-left:2em">Soporte multimedia mejorado: HTML5 proporciona soporte nativo para la reproducción de video y audio, lo que significa que ya no es necesario utilizar complementos de terceros como Flash para reproducir estos tipos de contenido.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">Nuevos elementos y atributos: HTML5 introduce varios nuevos elementos y atributos que mejoran la semántica y la accesibilidad de los sitios web. Por ejemplo, los nuevos elementos "header", "footer" y "section" ayudan a definir la estructura de una página de manera más clara.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">Soporte de aplicaciones web: HTML5 introduce una serie de tecnologías que permiten a los desarrolladores crear aplicaciones web que se ejecutan directamente en un navegador sin necesidad de complementos. Estas tecnologías incluyen el almacenamiento local, la API de geolocalización y la API de Canvas.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">Mayor flexibilidad: HTML5 es más flexible en términos de sintaxis y estructura de documento, lo que significa que es más fácil escribir y leer el código HTML.</li>
-            </ol></td>
-        </tr>
-        <tr>
-          <td>¿Qué componentes de estructura y estilo tiene una tabla?:</td>
-          <td>Una tabla en HTML consta de varios componentes de estructura y estilo, incluyendo el elemento "table", los elementos "thead", "tbody" y "tfoot", el elemento "tr", los elementos "th" y "td", y los atributos "colspan" y "rowspan". Los estilos CSS se pueden utilizar para personalizar el aspecto de la tabla, incluyendo el tamaño de fuente, el color de fondo, el espaciado de celda y la alineación de texto. Los componentes de estructura y estilo permiten al desarrollador crear tablas personalizadas y de aspecto profesional para mostrar datos de manera clara y organizada.</td>
-        </tr>
-        <tr>
-          <td>¿Cuáles son los principales controles de una forma HTML5?:</td>
-          <td>HTML5 tiene una variedad de controles para que los desarrolladores elijan el que mejor se adapte a sus necesidades. Algunos ejemplos son:
-            <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
-                <li style="margin-left:2em">Cajas de texto: Permiten al usuario ingresar texto en un solo campo.
-                </li>
-                <li style="margin-left:2em; padding-bottom: 0;">Áreas de texto: Permiten al usuario ingresar texto en un campo más grande que una caja de texto.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">Botones de opción: Permiten al usuario seleccionar una opción entre varias.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">Botones de radio: Permiten al usuario seleccionar una única opción de un conjunto de opciones.</li>
-                <li style="margin-left:2em; padding-bottom: 0;">Entre otros...</li>
-            </ol></td>
-        </tr>
-        <tr>
-          <td>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?(Google):</td>
-          <td>Google tiene un buen soporte para HTML5 en su navegador web, Google Chrome, así como en muchas de sus herramientas para desarrolladores, como Google Web Designer y Google Analytics. Además, Google ha adoptado muchas de las características de HTML5 en sus productos y servicios para proporcionar una mejor experiencia web para los usuarios.</td>
-        </tr>
       </table>
+    </div>
 
-    <h1 class="title is-5 has-text-centered">Sobre el ciclo de vida y desarrollo de los sistemas de información:</h1>
-    <table id="customers_dos">
-      <tr>
-        <th>Company</th>
-        <th>Contact</th>
-      </tr>
-      <tr>
-        <td>¿Cuál es el ciclo de vida de los sistemas de información?:</td>
-        <td>El ciclo de vida de los sistemas de información es un proceso estructurado que se utiliza para desarrollar, implementar y mantener sistemas de información. Las etapas comunes son: planificación, análisis, diseño, desarrollo, pruebas, implementación y mantenimiento. Es un proceso continuo que evoluciona a medida que el sistema requiere actualizaciones y mejoras.</td>
-      </tr>
-      <tr>
-        <td>¿Cuál es el ciclo de desarrollo de sistemas de información?</td>
-        <td>El ciclo de desarrollo de sistemas de información es un proceso estructurado que consta de seis etapas: identificación de problemas o necesidades, análisis de requisitos, diseño del sistema, implementación del sistema, pruebas del sistema y mantenimiento y evolución del sistema. Es un proceso iterativo que implica volver a las etapas anteriores en caso de que se encuentren problemas o se necesiten cambios adicionales. El objetivo principal es garantizar que el sistema de información desarrollado cumpla con los requisitos del usuario, sea eficiente y efectivo, y proporcione un valor agregado para la organización.</td>
-      </tr>
-    </table>
-
-    <h1 class="title is-5 has-text-centered">Preguntas Lab2:</h1>
-    <table id="customers_dos">
-      <tr>
-        <th>Company</th>
-        <th>Contact</th>
-      </tr>
-      <tr>
-        <td>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </td>
-        <td>!important es un arma de dos filos. Si tiene un uso importante para forzar un esitlo o cuando deseamos anular un estilo existente que esta ineterfiriendo o causando problemas con el codigo que tenemos.
-
-          Pero, debemos de tener cuidado al usarlo ya que si lo usamos de manera inadecuada hacemos que el codigo sea mas dificil de leer y entender, pero mas importante aun mas complicado de mantener e inclusive puede causar conflictos con otros estilos.
-        </td>
-      </tr>
-      <tr>
-        <td>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</td>
-        <td>El fondo de pantalla es importante ya que mejora la interfaz y la experiencia del usaurio al usar una pagina. Pero, debemos de tener cuidado por ciertas razones como:
-          <ol style="list-style-type: lower-alpha; padding-bottom: 0;">
-            <li style="margin-left:2em">Velocidad de carga: Si la imagen es de alta resolucion, puede aumentar la velocidad de carga de manera significante y afectar negativamente en el rendimineto de la pagina.
-            </li>
-            <li style="margin-left:2em; padding-bottom: 0;">Visibilidad del contenido: Los colores, objetos y tonos de una imagen pueden interefrir con atributos, imagenes y textos en nuestra pagina. Ademas, no queremos distraer al usuario del contenido de la pagina que es lo mas importante.</li>
-            <li style="margin-left:2em; padding-bottom: 0;">Compatibilidad: Cabe mencionar que todos los dispositivos y los web browsers tienen diferentes configuraciones de colores, tamanos y resoluciones, en algunos aparatos se puede ver muy bien, pero en otros se puede sacrificar la estetica de la pagina.</li>
-        </ol>
-        </td>
-      </tr>
-      <tr>
-        <td>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt? </td>
-        <td>Se recomienda utilizar unidades relativas como % para elementos adaptables, píxeles (px) para elementos fijos y puntos (pt) para elementos de impresión. La elección depende del contexto y del propósito de la propiedad de estilo.</td>
-      </tr>
-      <tr>
-        <td>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</td>
-        <td>El uso de una versión minimizada del CSS mejora el rendimiento del sitio al reducir el tamaño del archivo, disminuir la carga en el servidor, mejorar la caché del navegador y acelerar el tiempo de renderizado, lo que se traduce en una carga más rápida de la página y una mejor experiencia del usuario.</td>
-      </tr>
-
-    </table>
 
     <section class="section">
       <div class="container">
