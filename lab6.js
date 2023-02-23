@@ -8,7 +8,7 @@ let boton_psw = document.getElementById("boton-psw")
 //         alert_text.textContent = "Contrasena Muy Chica"
 //     } else {
 //         console.log("correcto")
-//         alert_text.textContent = "Contrasena Bien"
+//         alert_text.textContent = "Contrasena Bien"s
 //     }
 // }
 
