@@ -13,3 +13,14 @@ for(let item of arreglo){
 
 console.log("Este log esta despues de imprimir el arreglo")
 
+//http es el modulo que permite crear un servidor que pueda atender peticiones http
+const http = require('http')
+
+const server = http.createServer( (request, response) => {
+        console.log(request.url);
+        // response.setHeader('Content-Type', 'text/html');
+        // response.write("");
+        // response.end()
+    });
+
+server.listen(3000)
