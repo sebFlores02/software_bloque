@@ -2,7 +2,6 @@ const http = require('http')
 let fs = require(`fs`)
 const path = require('path');
 
-
 const server = http.createServer( (request, response) => {
 
     console.log(request.url);
@@ -29,36 +28,22 @@ const server = http.createServer( (request, response) => {
     }
 
     else if (request.url === "/login" && request.method === "GET") {
-        let filePath = './lab6' + request.url;
-        if (filePath == './lab6/') filePath = './lab6/index.html';
-        let extension = path.extname(filePath);
-        let contentType;
+        response.setHeader('Content-Type', 'text/html');
+        response.write('<!DOCTYPE html>');
+        response.write('<html>');
+        response.write('<head><meta charset="utf-8"></head><body>');
+        response.write(`<form action="/login" method="POST">`)
+            response.write(`<label for="usuario">Nombre del usuario</label>`)
+            response.write(`<input type="text" id="usuario" name="usuario"><br>`)
+            response.write(`<label for="contrasena">Contrasena</label>`)
+            response.write(`<input type="password" id="password" name="contrasena">`)
+            response.write(`<input type="submit" value="Enviar">`)
+        response.write(`</form>`)
+        response.write('</body></html>');
+        response.end();
+    }
 
-        switch (extension) {
-          case '.js':
-            contentType = 'text/javascript';
-            break;
-          case '.css':
-            contentType = 'text/css';
-            break;
-          default:
-            contentType = 'text/html';
-            break;
-        }
-
-        fs.readFile(filepath, null, function (error, data) {
-          if (error) {
-            response.writeHead(404);
-            response.write('Estas bien mal');
-          } else {
-            response.setHeader('Content-Type', contentType);
-            response.write(data);
-          }
-          response.end();
-        });
-      }
-
-     else if (request.url === "/ordenar" && request.method === "POST") {
+    else if (request.url === "/login" && request.method === "POST") {
 
         const datos = [];
 
@@ -70,12 +55,88 @@ const server = http.createServer( (request, response) => {
         return request.on('end', () => {
             const datos_completos = Buffer.concat(datos).toString();
             console.log(datos_completos);
-            const tipo_chilaquiles = datos_completos.split('&')[0].split('=')[1];
-            console.log(tipo_chilaquiles);
+            response.setHeader('Content-Type', 'text/html');
+            response.write('<!DOCTYPE html>');
+            response.write('<html>');
+            response.write('<head><meta charset="utf-8">');
+                response.write(`<style type="text/css">
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #F2F2F2;
+                }
+                .container {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    padding: 20px;
+                    background-color: #FFFFFF;
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+                }
+                .heading {
+                    font-size: 24px;
+                    font-weight: bold;
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+                .form-group {
+                    margin-bottom: 20px;
+                }
+                label {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                }
+                input[type="text"], input[type="email"], textarea {
+                    display: block;
+                    width: 100%;
+                    padding: 10px;
+                    border: 1px solid #CCCCCC;
+                    border-radius: 5px;
+                    box-sizing: border-box;
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+                input[type="submit"] {
+                    background-color: #4CAF50;
+                    color: #FFFFFF;
+                    border: none;
+                    padding: 10px 20px;
+                    border-radius: 5px;
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+                </style>`)
 
+                response.write(`<div>`)
+                    response.write(`<div class="heading">Regístrate</div>
+                    <form>
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo:</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico:</label>
+                            <input type="email" id="correo" name="correo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña:</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bio">Biografía:</label>
+                            <textarea id="bio" name="bio"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Registrarse">
+                        </div>
+                    </form>`)
+                response.write(`</div>`)
+            response.write(`</head><body>`)
+            response.write('</body></html>');
+            response.end();
         });
-
     }
+
     else {
 
         response.statusCode = 404
