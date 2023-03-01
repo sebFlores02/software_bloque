@@ -1,5 +1,3 @@
-console.log("hola")
-
 // fs es el modullo para trabajar con el sistema de archivos
 
 const filesystem = require('fs')

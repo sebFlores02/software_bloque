@@ -29,24 +29,21 @@ const server = http.createServer( (request, response) => {
     }
 
     else if (request.url === "/login" && request.method === "GET") {
-        let filepath = `./` + request.url
-        if(filepath === `./`){
-            filepath = `./lab10.html`
-        }
+        let filePath = './lab6' + request.url;
+        if (filePath == './lab6/') filePath = './lab6/index.html';
+        let extension = path.extname(filePath);
+        let contentType;
 
-        let extName = path.extname(filepath)
-        let contentType
-
-        switch(extName){
-            case `.js`:
-                contentType = `text/javascript`
-                break;
-            case '.css':
-                contentType = `text/css`
-                break;
-            default:
-                contentType = `text/html`
-                break;
+        switch (extension) {
+          case '.js':
+            contentType = 'text/javascript';
+            break;
+          case '.css':
+            contentType = 'text/css';
+            break;
+          default:
+            contentType = 'text/html';
+            break;
         }
 
         fs.readFile(filepath, null, function (error, data) {
@@ -91,6 +88,4 @@ const server = http.createServer( (request, response) => {
     });
 
 server.listen(3001)
-
-
 
