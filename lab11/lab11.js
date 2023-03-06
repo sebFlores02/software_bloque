@@ -38,9 +38,11 @@ app.use('/home', (request, response, next) => {
 
 const frontRutas = require('./routes/front.routes')
 const backRutas = require('./routes/back.routes')
+const signup = require('./routes/signup.routes')
 
 app.use('/career', frontRutas)
 app.use('/career', backRutas)
+app.use('/career', signup)
 
 app.use((request, response, next) => {
     console.log("Tercer middleware")

@@ -8,7 +8,22 @@ router.get('/front', (request, response, next) => {
 
     let html = `
 
-    <h1 style="text-align:center; font-size: 40px; margin-top:30px; padding: 70px;">Front End Dev RoadMap</h1>
+    <div style=" display: flex; justify-content: space-between; width: 90%; margin: 0 auto; padding: 70px 0; color: black;">
+
+        <div style=" color:black; display: flex; justify-content:space-around; flex-basis: calc(30%); ">
+            <a href="/home" style="text-align: center; font-size:14px; color: black; "><p>Home</p></a>
+            <a href="/career/back" style="text-align: center; font-size:14px; color: black; "><p>Haz click para accesar info de Back</p></a>
+        </div>
+
+        <div style="flex-basis: calc(30%)">
+            <h1 style=" font-size: 40px; ">Front End Dev RoadMap</h1>
+        </div>
+
+        <div style="flex-basis: calc(30%)">
+            <a style="color: black; text-decoration: none;" href="/career/signup"><p>Convertirse en Miembro</p></a>
+        </div>
+
+    </div>
 
     <div style=" width:80%; margin:0 auto; display:flex; justify-content:space-between; margin-bottom: 15px;">
 
@@ -53,10 +68,6 @@ router.get('/front', (request, response, next) => {
     response.send(html)
 })
 
-router.post('/front', (request, response, next) => {
-    console.log(request.body);
-    console.log(request.body.jugador);
-    response.send(`El jugador es: ${request.body.jugador}`);
-});
+
 
 module.exports = router;

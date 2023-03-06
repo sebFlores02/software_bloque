@@ -11,17 +11,17 @@ router.get('/back', (request, response, next) => {
 
     <div style=" display: flex; justify-content: space-between; width: 90%; margin: 0 auto; padding: 70px 0; color: white;">
 
-        <div style=" display: flex; flex-basis: calc(30%)">
+        <div style=" display: flex; justify-content:space-around; flex-basis: calc(30%)">
             <a href="/home" style="text-align: center; font-size:14px; color: white; "><p>Home</p></a>
-            <a href="/career/front" style="text-align: center; font-size:14px; color: white; "><p>Haz click para accesar info de Back</p></a>
+            <a href="/career/front" style="text-align: center; font-size:14px; color: white; "><p>Haz click para accesar info de Front</p></a>
         </div>
 
         <div style="flex-basis: calc(30%)">
-            <h1 style=" font-size: 40px; ">Front End Dev RoadMap</h1>
+            <h1 style=" font-size: 40px; ">Back End Dev RoadMap</h1>
         </div>
 
         <div style="flex-basis: calc(30%)">
-            <p>Convertirse en Miembro</p>
+            <a style="color: white; text-decoration: none;" href="/career/signup"><p>Convertirse en Miembro</p></a>
         </div>
 
     </div>
