@@ -49,8 +49,8 @@ const missingNumber = (n, numbers) => {
 missingNumber(n, numbers)
 
 const server = http.createServer((request, response) => {
-  let filePath = './lab6' + request.url;
-  if (filePath == './lab6/') filePath = './lab6/index.html';
+  let filePath = '../lab6' + request.url;
+  if (filePath == '../lab6/') filePath = '../lab6/index.html';
   let extension = path.extname(filePath);
   let contentType;
 
