@@ -1,14 +1,11 @@
-<%- include('includes/head.ejs') %>
+<%- include('includes/header.ejs') %>
 
-<h1 class="title">Razas de perros</h1>
+<h1 style="margin-top: 30px;" class="title">Usuarios</h1>
 
-<a href="/perros/nuevo" class="button is-link is-rounded">Registra Perro</a>
-<br><br>
-
-<% if (razas.length > 0) { %>
+<% if (usuarios.length > 0) { %>
     <div class="columns">
         <% let columns = 0; %>
-        <% for (let raza of razas) { %>
+        <% for (let usuario of usuarios) { %>
             <% if (columns % 4 == 0) { %>
     </div>
     <div class="columns">
@@ -18,24 +15,24 @@
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-4by3">
-                            <img src="<%= raza.imagen %>" alt="Placeholder image">
+                            <img src="<%= usuario.pp %>" alt="Placeholder image">
                         </figure>
                     </div>
                     <div class="card-content">
                         <div class="media">
                             <div class="media-left">
                                 <figure class="image is-48x48">
-                                    <img src="<%= raza.imagen %>" alt="Placeholder image">
+                                    <img src="<%= usuario.pp %>" alt="Placeholder image">
                                 </figure>
                             </div>
                             <div class="media-content">
-                                <p class="title is-4"><%= raza.raza %></p>
-                                <p class="subtitle is-6">@<%= raza.nombre %></p>
+                                <p class="title is-4"><%= usuario.nombre %></p>
+                                <p class="subtitle is-6">@<%= usuario.user %></p>
                             </div>
                         </div>
 
                         <div class="content">
-                            <%= raza.descripcion %> <a>@<%= raza.nombre %></a>.
+                            <%= usuario.descripcion %> <a>@<%= usuario.user %></a>.
                             <a href="#">#css</a> <a href="#">#responsive</a>
                             <br>
                             <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
@@ -49,4 +46,4 @@
     <h1>No hay razas registradas</h1>
 <% } %>
 
-<%- include('includes/foot.ejs') %>
+<%- include('includes/footer.ejs') %>
