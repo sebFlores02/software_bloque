@@ -1,3 +1,5 @@
+const db = require('../util/database');
+
 const perros = [
     {
         nombre: "Duquesa",
@@ -50,7 +52,12 @@ module.exports = class Game {
     //Este método servirá para devolver los objetos del almacenamiento persistente.
     // static es metodo de la clase y no de la instancia
     static fetchAll() {
-        return perros
+        return db.execute(`Select p.id, p.nombre, p.imagen, p.descripcion, p.created_at, r.nombre as raza
+        FROM perros p, razas r
+        Where p.idRaza = r.id
+        `)
     }
 
 }
+// modelo es para datos
+// controlador es para logica

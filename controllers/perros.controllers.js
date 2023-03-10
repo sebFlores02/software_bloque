@@ -13,10 +13,34 @@ exports.post_nuevo = (request, response, next) => {
     })
 
     perro.save()
+
+    request.session.ultimo_perro = perro.nombre
+
     response.redirect('/perros/');
 };
 
 
 exports.listar = (request, response, next) => {
-    response.render('lista', {razas: Perro.fetchAll()});
+
+    let consultas = request.get('Cookie').split(';')[0].split('=')[1]
+
+    consultas++;
+
+    request.session.ultimo_perro
+
+    Perro.fetchAll()
+
+    .then(([rows, fieldData]) => {
+        console.log(rows);
+
+        response.render('lista', {
+            razas: rows,
+            ultimo_perro: request.session.ultimo_perro || ''
+        });
+
+    })
+
+    .catch(err => {
+        console.log(err);
+    });
 };
