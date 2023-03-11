@@ -2,22 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Poppins;
+    font-family: sans-serif;
 }
+
+white {
+    color: white;
+}
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #eee;
+    background-color: black;
 }
+.size95 {
+    font-size: 0.95rem !important;
+}
+
 .card{
     position: relative;
     width: 360px;
     min-height: 400px;
-    background: #fff;
     box-shadow: 15px 15px 60px rgba(0, 0, 0, .15);
-    padding: 20px;
+    padding: 20px 20px 0 20px;
+    background: black !important;
+    margin-top: 0px !important;
 }
 .card .top{
     display: flex;
@@ -45,6 +55,7 @@ body{
     object-fit: cover;
     object-position: center;
     cursor: pointer;
+    border-radius: 5px;
 }
 .card .top .userDeatils h3{
     font-size: 18px;
@@ -82,12 +93,16 @@ body{
     margin-top: 5px;
     font-size: 1em;
     color: #4d4d4f;
+    font-weight: bold;
 }
 .message{
     font-weight: 400;
     margin-top: 5px;
-    color: #777;
+    /*color: #777;*/
     line-height: 1.5em;
+    background-color: transparent !important;
+    margin-bottom: 5px !important;
+    background-color: aqua;
 }
 .message b{
     color: #262626;
@@ -97,7 +112,6 @@ body{
     cursor: pointer;
 }
 .comments{
-    margin-top: 10px;
     align-items: center;
     color: #999;
 }
@@ -121,6 +135,10 @@ body{
     font-weight: 400;
     font-size: 18px;
     color: #262626;
+    background-color: transparent !important;
+}
+.addComments .text::placeholder{
+    font-size: 0.95rem;
 }
 .addComments .text::placeholder{
     color: #777;
@@ -129,4 +147,8 @@ body{
     margin-top: 10px;
     font-weight: 500;
     color: #777;
+}
+.border {
+    margin-top: 20px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.333);
 }

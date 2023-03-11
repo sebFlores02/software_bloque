@@ -1,24 +1,27 @@
 const usuarios = [
     {
+        pp: "https://romanroadtrust.co.uk/wp-content/uploads/2018/01/profile-icon-png-898-300x300.png",
         nombre: "Benito Tagle",
         escuela: "Texas A&M",
-        pp: "https://bulma.io/images/placeholders/1280x960.png",
+        image: "https://bulma.io/images/placeholders/1280x960.png",
         user: "tagle02",
         descripcion: "Estudio Ingenieria Mecanica en A&M",
         likes: 1200
     },
     {
+        pp: "https://romanroadtrust.co.uk/wp-content/uploads/2018/01/profile-icon-png-898-300x300.png",
         nombre: "Patricio Becerril",
         escuela: "Universidad Panamericana",
-        pp: "https://bulma.io/images/placeholders/1280x960.png",
+        image: "https://bulma.io/images/placeholders/1280x960.png",
         user: "becerrilp2002",
         descripcion: "Estudio Derecho en la Universidad Panamericana",
         likes: 2700
     },
     {
+        pp: "https://romanroadtrust.co.uk/wp-content/uploads/2018/01/profile-icon-png-898-300x300.png",
         nombre: "Marcelo Da Paz Leal",
         escuela: "Michigan State",
-        pp: "https://bulma.io/images/placeholders/1280x960.png",
+        image: "https://bulma.io/images/placeholders/1280x960.png",
         user: "dapazleal",
         descripcion: "Estudio Computer Science en Mich University",
         likes: 3500
