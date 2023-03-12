@@ -1,9 +1,12 @@
 <%- include('includes/head.ejs') %>
-<!-- <div style="display: flex; flex-direction: row;"> -->
-    <%- include('includes/menu.ejs') %>
+<%- include('includes/menu.ejs') %>
 
-    <div class="main_content">
-        <!-- <%- include('includes/nuevo.ejs') %> -->
+<div class="main_content">
+
+    <!-- <a href="/home/nuevo" class="button is-link is-rounded">Registra Perro</a> -->
+
+    <%- include('nuevo.ejs') %>
+    <%- include('historias.ejs') %>
 
     <div id="content_section">
         <% for (let usuario of usuarios) { %>
@@ -16,6 +19,8 @@
                         </div>
                         <h3 class='has-text-white size95'>
                         <%= usuario.nombre %><br><span style="font-size: 0.80em; font-weight: 400;"><%= usuario.escuela %></span></h3>
+                        <p class="point">•</p>
+                        <p style="color: #A8A8A8; margin-bottom: 16px;">1h</p>
                     </div>
                     <div class="dot">
                         <img src="/images/icons/more.png" alt="dot">
@@ -54,9 +59,8 @@
                 </div>
             </div>
 
-            <% } %>
+        <% } %>
     </div>
 </div>
 
-<!-- <%- include('includes/footer.ejs') %> -->
-<!-- </div> -->
+<%- include('includes/suggestions.ejs') %>

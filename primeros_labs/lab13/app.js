@@ -20,8 +20,15 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.set('view engine', 'ejs')
 app.set('views', 'views')
 
-const rutasUsuarios = require('./routes/usuarios.routes')
-app.use('/', rutasUsuarios)
+// const login = require('./routes/login.routes')
+// app.use('/', login)
+
+const home = require('./routes/usuarios.routes')
+app.use('/home', home)
+
+const login = require('./routes/login.routes')
+app.use('/', login)
+
 
 app.use((request, response, next) => {
     response.status(404)

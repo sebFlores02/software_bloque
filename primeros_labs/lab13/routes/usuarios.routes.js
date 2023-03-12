@@ -10,8 +10,4 @@ router.post('/nuevo', usuarioController.post_nuevo);
 
 router.get('/', usuarioController.listar);
 
-// router.get('/', (request, response, next) => {
-//     response.render('home', {usuarios: usuarios});
-// });
-
 module.exports = router;

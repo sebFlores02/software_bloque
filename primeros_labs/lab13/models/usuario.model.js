@@ -32,10 +32,11 @@ module.exports = class Game {
 
     //Constructor de la clase. Sirve para crear un nuevo objeto, y en él se definen las propiedades del modelo
     constructor(nuevo_usuario) {
+        this.pp = nuevo_usuario.pp  || 'https://romanroadtrust.co.uk/wp-content/uploads/2018/01/profile-icon-png-898-300x300.png';
         this.nombre = nuevo_usuario.nombre  || 'Firulais';
         this.escuela = nuevo_usuario.escuela  || 'Tec';
+        this.image = nuevo_usuario.image  || 'https://bulma.io/images/placeholders/1280x960.png';
         this.user = nuevo_usuario.user  || 'prueba02';
-        this.pp = nuevo_usuario.pp  || 'https://bulma.io/images/placeholders/1280x960.png';
         this.descripcion = nuevo_usuario.descripcion  || 'Un perro muy cool';
     }
 

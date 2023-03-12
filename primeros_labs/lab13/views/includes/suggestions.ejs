@@ -1,3 +1,34 @@
-<div style="background-color: blue;">
-    <h1>Hola charlie</h1>
+<div class="suggestions">
+
+    <div class="suggestions_miPerfil">
+        <img class="img_miPerfil" src="https://romanroadtrust.co.uk/wp-content/uploads/2018/01/profile-icon-png-898-300x300.png">
+
+        <div class="suggestions_user_name">
+            <p class="suggestions_user">seb.flores02</p>
+            <p class="suggestions_name">Sebastian Flores</p>
+        </div>
+
+        <p class="suggestions_switch">Switch</p>
+    </div>
+
+    <div class="suggestions_you">
+        <h5 class="suggestions_4_you">Suggestions for you</h5>
+        <p class="suggestions_you_see">See All</p>
+    </div>
+
+    <div class="suggestions_section">
+        <% for(let i = 0; i < 4; i++) {%>
+            <div class="suggestion">
+                <img class="img_suggestion" src="https://romanroadtrust.co.uk/wp-content/uploads/2018/01/profile-icon-png-898-300x300.png">
+
+                <div class="suggestion_user_followed">
+                    <p class="suggestion_user">soydanteprz</p>
+                    <p class="suggestion_followed">Followed by yuna.ch_131 + 6 more</p>
+                </div>
+
+                <p class="suggestion_follow">Follow</p>
+            </div>
+        <% } %>
+    </div>
+
 </div>
