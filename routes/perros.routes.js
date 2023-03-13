@@ -8,6 +8,8 @@ router.get('/nuevo', perrosController.get_nuevo);
 
 router.post('/nuevo', perrosController.post_nuevo);
 
+router.get('/:id', perrosController.listar);
+
 router.get('/', perrosController.listar);
 
 module.exports = router;

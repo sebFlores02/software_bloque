@@ -4,7 +4,11 @@
 
 <a href="/perros/nuevo" class="button is-link is-rounded">Registrar perro</a>
 
-<br><br>
+<% if (mensaje != '') { %>
+    <div class="notification is-primary">
+        <%= mensaje %>
+      </div>
+    <% } %>
 
 <% if (razas.length > 0) { %>
     <div class="columns">

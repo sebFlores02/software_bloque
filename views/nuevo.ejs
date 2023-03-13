@@ -8,7 +8,13 @@
     <input required name="nombre" id="nombre" class="input is-rounded" type="text" placeholder="Firulais">
     <br><br>
     <label for="raza">Raza:</label>
-    <input name="raza" id="raza" class="input is-rounded" type="text" placeholder="Firulais">
+    <div class="select is-primary">
+        <select name="raza" id="raza">
+          <% for (raza of razas) { %>
+            <option value="<%= raza.id %>"><%= raza.nombre%></option>
+            <% } %>
+        </select>
+      </div>
     <br><br>
     <label for="descripcion">Descripcion:</label>
     <input name="descripcion" id="descripcion" class="input is-rounded" type="text" placeholder="Firulais">

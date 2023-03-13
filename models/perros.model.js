@@ -62,4 +62,22 @@ module.exports = class Perro {
         );
     }
 
+    static fetchOne(id) {
+        return db.execute(
+            `SELECT p.id, p.nombre, p.imagen, p.descripcion, p.created_at, r.nombre as raza
+            FROM perros p, razas r
+            WHERE p.idRaza = r.id AND p.id = ?
+            `,[id]
+        );
+    }
+
+    static fetch(id) {
+        if (id) {
+            return Perro.fetchOne(id)
+        }
+        else {
+            return Perro.fetchAll()
+        }
+    }
+
 }
