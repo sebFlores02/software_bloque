@@ -1,9 +1,8 @@
-const bodyParser = require('body-parser');
 const express = require('express');
-const path = require('path')
-const session = require('express-session')
+const bodyParser = require('body-parser');
+const path = require('path');
+const session = require('express-session');
 
-// llamar constructor de express
 const app = express();
 
 app.use(session({
@@ -12,20 +11,13 @@ app.use(session({
     saveUninitialized: false, //Asegura que no se guarde una sesión para una petición que no lo necesita
 }));
 
-// creamos carpeta estatica para accesar html, css y js
-// lo hacemos con la ruta /nombreHTML.html
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
 
-// configuramos ejs
-app.set('view engine', 'ejs')
-app.set('views', 'views')
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
-// los cambios en Middleware se aplican en toda la aplicacion
-// registramos middleware con use, recibe como parametro un apuntador a otra funcion
-// se requieren 3 variable: request, response y next(nos dice que avanzemos al siguiente middleware)
-// va de arriba hacia abajo
 //Middleware
 app.use((request, response, next) => {
     console.log('Middleware!');
@@ -38,27 +30,32 @@ app.use((request, response, next) => {
 });
 
 app.use('/hola', (request, response, next) => {
-    response.send('Hola desde la ruta hola')
-})
+    response.send('Hola desde la ruta /hola');
+});
 
-const rutasPerros = require('./routes/perros.routes')
+const rutasUsuarios = require('./routes/usuarios.routes');
 
-app.use('/perros', rutasPerros)
+app.use('/usuarios', rutasUsuarios);
 
-const hockeyRutas = require('./routes/hockey.routes')
+const rutasPerros = require('./routes/perros.routes');
 
-app.use('/hockey', hockeyRutas)
+app.use('/perros', rutasPerros);
 
-const rutasChilaquiles = require('./routes/chilaquiles.routes')
-app.use('/chilaquiles', rutasChilaquiles)
+const hockeyRutas = require('./routes/hockey.routes');
+
+app.use('/hockey', hockeyRutas);
+
+const rutasChilaquiles = require('./routes/chilaquiles.routes');
+
+app.use('/chilaquiles', rutasChilaquiles);
 
 app.use((request, response, next) => {
-    console.log("Tercer middleware")
+    console.log("Tercer middleware");
 
-    response.status(404)
-    // send() envia la respuesta al cliente
-    response.send('Lo sentimos, esta ruta no existe')
-})
+    response.status(404);
 
-// puerto 3000
+    //Envía la respuesta al cliente
+    response.send('Lo sentimos, esta ruta no existe');
+});
+
 app.listen(3000);

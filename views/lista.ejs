@@ -1,8 +1,9 @@
 <%- include('includes/head.ejs') %>
 
-<h1 class="title">Razas de perros</h1>
+<h1 class="title">Perros registrados</h1>
 
-<a href="/perros/nuevo" class="button is-link is-rounded">Registra Perro</a>
+<a href="/perros/nuevo" class="button is-link is-rounded">Registrar perro</a>
+
 <br><br>
 
 <% if (razas.length > 0) { %>
@@ -35,7 +36,7 @@
                         </div>
 
                         <div class="content">
-                            <%= raza.descripcion %> <a>@<%= raza.nombre %></a>.
+                            <%= raza.descripcion %> <a><%= raza.handle %></a>.
                             <a href="#">#css</a> <a href="#">#responsive</a>
                             <br>
                             <time datetime="<%= raza.created_at %>"><%= raza.created_at %></time>
@@ -48,5 +49,13 @@
 <% } else { %>
     <h1>No hay razas registradas</h1>
 <% } %>
+
+<% if (ultimo_perro != '') { %>
+    <div class="notification is-link is-light">
+        Último perro agregado: <%= ultimo_perro %>
+    </div>
+<% } %>
+
+<a href="/perros/nuevo" class="button is-link is-rounded">Registrar perro</a>
 
 <%- include('includes/foot.ejs') %>

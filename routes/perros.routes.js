@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-const perrosController = require('../controllers/perros.controllers')
+const perrosController = require('../controllers/perros.controller');
 
 router.get('/nuevo', perrosController.get_nuevo);
 

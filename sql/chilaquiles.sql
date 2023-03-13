@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 09, 2023 at 05:06 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Servidor: localhost
+-- Tiempo de generación: 09-03-2023 a las 17:04:37
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,35 +18,35 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `chilaquiles`
+-- Base de datos: `chilaquiles`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `perros`
+-- Estructura de tabla para la tabla `perros`
 --
 
 CREATE TABLE `perros` (
   `id` int(11) NOT NULL,
   `nombre` varchar(80) NOT NULL,
   `imagen` varchar(400) DEFAULT NULL,
-  `descripcion` varchar(500) DEFAULT NULL,
+  `descripcion` varchar(400) DEFAULT NULL,
   `idRaza` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Dumping data for table `perros`
+-- Volcado de datos para la tabla `perros`
 --
 
 INSERT INTO `perros` (`id`, `nombre`, `imagen`, `descripcion`, `idRaza`, `created_at`) VALUES
-(1, 'Tobias', 'https://t2.ea.ltmcdn.com/es/posts/1/6/2/10_curiosidades_del_golden_retriever_21261_orig.jpg', 'Come mucho', 1, '2023-03-09 16:03:00');
+(1, 'Duquesa', 'https://www.purina.es/sites/default/files/2021-02/BREED%20Hero_0009_beagle_0.jpg', 'Hermosa', 1, '2023-03-09 15:56:23');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `razas`
+-- Estructura de tabla para la tabla `razas`
 --
 
 CREATE TABLE `razas` (
@@ -56,53 +56,52 @@ CREATE TABLE `razas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
--- Dumping data for table `razas`
+-- Volcado de datos para la tabla `razas`
 --
 
 INSERT INTO `razas` (`id`, `nombre`, `created_at`) VALUES
-(1, 'Golden Retriever', '2023-03-09 16:02:41');
+(1, 'Beagle', '2023-03-09 15:54:37'),
+(2, 'Golden', '2023-03-09 15:55:14');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `perros`
+-- Indices de la tabla `perros`
 --
 ALTER TABLE `perros`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `id` (`id`,`imagen`),
-  ADD KEY `idRaza` (`idRaza`),
-  /*ADD KEY `idRaza_2` (`idRaza`);*/
+  ADD KEY `idRaza` (`idRaza`);
 
 --
--- Indexes for table `razas`
+-- Indices de la tabla `razas`
 --
 ALTER TABLE `razas`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `perros`
+-- AUTO_INCREMENT de la tabla `perros`
 --
 ALTER TABLE `perros`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `razas`
+-- AUTO_INCREMENT de la tabla `razas`
 --
 ALTER TABLE `razas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `perros`
+-- Filtros para la tabla `perros`
 --
 ALTER TABLE `perros`
   ADD CONSTRAINT `perros_ibfk_1` FOREIGN KEY (`idRaza`) REFERENCES `razas` (`id`);
