@@ -44,8 +44,12 @@ module.exports = class Perro {
     }
 
     //Este método servirá para guardar de manera persistente el nuevo objeto.
+    // usamos ? para evitar ataques, un signo por atributo que queremos meter
     save() {
-        perros.push(this);
+        return db.execute(`
+            INSERT INTO Perros (nombre, imagen, descripcion, idRaza)
+            values(?, ?, ?, ?)
+            `, [this.nombre, this.imagen, this.descripcion, this.raza]);
     }
 
     //Este método servirá para devolver los objetos del almacenamiento persistente.

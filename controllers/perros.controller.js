@@ -8,15 +8,19 @@ exports.post_nuevo = (request, response, next) => {
 
     const perro = new Perro({
         nombre: request.body.nombre,
-        raza: request.body.raza,
+        raza: 1,//request.body.raza,
         descripcion: request.body.descripcion,
     });
 
-    perro.save();
+    perro.save()
+    .then(([rows, fieldData]) => {
+        request.session.ultimo_perro = perro.nombre;
+        response.redirect('/perros/');
+    })
+    .catch(error => {
+        console.log(error)
+    })
 
-    request.session.ultimo_perro = perro.nombre;
-
-    response.redirect('/perros/');
 };
 
 exports.listar = (request, response, next) => {
