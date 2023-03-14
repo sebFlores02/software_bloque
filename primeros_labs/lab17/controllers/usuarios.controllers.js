@@ -1,7 +1,16 @@
 const Usuario = require('../models/usuario.model')
 
 exports.get_nuevo = (request, response, next) => {
-    response.render('nuevo');
+    Usuario.fetchAll()
+    .then(([rows, fieldData]) => {
+        response.render('nuevo', {
+            usuarios: rows,
+        });
+    })
+    .catch(error => {
+        console.log(error)
+    })
+    // response.render('nuevo');
 };
 
 exports.post_nuevo = (request, response, next) => {
@@ -17,10 +26,15 @@ exports.post_nuevo = (request, response, next) => {
     })
 
     usuario.save()
+    .then(([rows, fieldData]) => {
+        request.session.mensaje = "El uusario "
 
-    request.session.ultimo_usuario = usuario.nombre
-
-    response.redirect('/home/');
+        request.session.ultimo_usuario = usuario.nombre
+        response.redirect('/home/');
+    })
+    .catch(error => {
+        console.log(error)
+    })
 };
 
 
@@ -33,15 +47,18 @@ exports.listar = (request, response, next) => {
 
     consultas++;
 
+    let mensaje = ''
+
     response.setHeader('Set-Cookie', 'consultas=' + consultas + '; HttpOnly');
 
-    Usuario.fetchAll()
+    Usuario.fetch(request.params.id)
     .then(([rows, fieldData]) => {
         console.log(rows);
 
         response.render('lista', {
             usuarios: rows,
             ultimo_usuario: request.session.ultimo_usuario || '',
+            mensaje: mensaje,
         });
     })
     .catch(err => {
