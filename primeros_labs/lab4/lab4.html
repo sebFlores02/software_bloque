@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+		<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <title>Lab4</title>
+    <style>
+            #customers, #customers_dos {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        #customers td, #customers th, #customers_dos td, #customers_dos th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers_dos tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers_dos tr:hover {background-color: #ddd;}
+
+        #customers th, #customers_dos th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color: #04AA6D;
+          color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular el area y circunferencia de un circulo :)</h1>
+    <label for="radius">Inserta el radio: </label>
+    <input type="text" id="radius"><br>
+    <!--<label for="radius">Inserta el valor de pi: </label>-->
+    <!--<input type="text" id="pi"><br>-->
+    <button onclick="getArea()">Calcular area</button>
+    <p id="res1"></p>
+    <button onclick="getCircumference()">Calcular circunferencia</button>
+    <p id="res2"></p>
+
+    <script>
+
+
+        // Ejercicio 1
+        let numero = Number(window.prompt("Ingresa un numero: "));
+        cuadrados(numero);
+        cubos(numero);
+
+        function cuadrados(numero){
+            document.write(`<h2>Los cuadrados de 1 hasta el numero ${numero} son:</h2>`);
+            document.write("<table>");
+            for(let i = 1; i <= numero; i++){
+                document.write("<tr>");
+                document.write(`<td>${i}</td><td>${i*i}</td>`);
+                document.write("</tr>");
+            }
+            document.write("</table>");
+            console.assert(numero >= 0, "El número ingresado no es válido");
+        }
+
+        function cubos(numero){
+            document.write(`<h2>Los cubos de 1 hasta el numero ${numero} son:</h2>`);
+            document.write("<table>");
+            for(let i = 1; i <= numero; i++){
+                document.write("<tr>");
+                document.write(`<td>${i}</td><td>${i*i*i}</td>`);
+                document.write("</tr>");
+            }
+            document.write("</table>");
+            console.assert(numero >= 0, "El número ingresado no es válido");
+        }
+
+        // Estilos
+        document.write(`
+        <style>
+            table {
+            border-collapse: collapse;
+            margin: 20px 0;
+            }
+            td {
+            border: 1px solid black;
+            padding: 5px;
+            }
+            h2 {
+            margin-bottom: 5px;
+            }
+        </style>
+        `);
+
+
+
+
+        // Segundo Ejercicio
+
+        let num1 = Math.floor(Math.random()*20)+1
+        let num2 = Math.floor(Math.random()*20)+1
+        let suma = num1 + num2
+
+        let startTime = Date.now();
+
+        let resultado = Number(window.prompt(`Ingresa el resultado de ${num1} + ${num2}`))
+
+        let endTime = Date.now()
+
+        let tiempo = (endTime - startTime) / 1000
+
+        if(resultado === suma){
+            document.write(`Respuesta correcta.<br>`)
+        } else {
+            document.write(`Respuesta incorrecta.<br>`)
+        }
+        document.write(`El tiempo de respuesta fue ${tiempo}<br>`)
+        console.assert(resultado === suma, "La respuesta ingresada no es correcta")
+
+
+
+
+        // ejercicio 3
+        let numeros = [11, 22, 33,4, 0, 0, -1, -2, -3]
+        contador(numeros)
+
+        function contador(array){
+            let numerosNegativos = 0
+            let ceros = 0
+            let numerosPositivos = 0
+            for(numero of numeros){
+                if(numero < 0){
+                    numerosNegativos++
+                }
+                else if(numero == 0){
+                    ceros++
+                } else {
+                    numerosPositivos++
+                }
+            }
+            document.write(`La cantidad de numeros negativos es: ${numerosNegativos}<br>`)
+            document.write(`La cantidad de ceros es: ${ceros}<br>`)
+            document.write(`La cantidad de numeros positivos es: ${numerosPositivos}<br>`)
+
+            // asserts
+            console.assert(numerosNegativos === 3, "El número de negativos es incorrecto");
+            console.assert(ceros === 2, "El número de ceros es incorrecto");
+            console.assert(numerosPositivos === 4, "El número de positivos es incorrecto");
+        }
+
+
+        // ejercicio 4
+        const matriz = [
+            [1, 1, 1],
+            [4, 5, 6],
+            [7, 7, 7]
+        ];
+        const promediosDeMatriz = promedios(matriz);
+        document.write(promediosDeMatriz); // [2, 5, 8]
+
+        function promedios(matriz) {
+            const promedios = [];
+
+            for (let i = 0; i < matriz.length; i++) {
+                let suma = 0;
+                for (let j = 0; j < matriz[i].length; j++) {
+                    suma += matriz[i][j];
+                }
+                const promedio = suma / matriz[i].length;
+                promedios.push(promedio);
+                }
+
+            return `${promedios}<br>`;
+        }
+
+
+        // Ejericio 5
+
+        //let numero = window.prompt("Ingresa un numero")
+        let number = window.prompt("Ingresa un Numero")
+        inverso(number)
+
+        function inverso(numero){
+            let array = numero.split('')
+            let reverse = array.reverse()
+            let res = reverse.join('')
+
+            document.write(Number(res))
+        }
+
+
+
+        // Problema 6
+        const pi = 3.14159
+
+        function Circle(radius) {
+            this.radius = radius;
+        }
+
+        Circle.prototype.getArea = function() {
+            let area = pi * this.radius * this.radius;
+            return area;
+        }
+
+        Circle.prototype.getCircumference = function() {
+            let circumference = 2 * pi * this.radius;
+            return circumference;
+        }
+
+        function getArea() {
+            let radiusEl = document.getElementById("radius").value;
+            const circle1 = new Circle(parseFloat(radiusEl), parseFloat(pi));
+            let area = circle1.getArea();
+            let res1 = document.getElementById("res1");
+            res1.innerHTML = `The area of the circle is: ${area}`;
+        }
+
+        function getCircumference() {
+            let radiusEl = document.getElementById("radius").value;
+            const circle1 = new Circle(parseFloat(radiusEl), parseFloat(pi));
+            let circumference = circle1.getCircumference();
+            let res2 = document.getElementById("res2");
+            res2.innerHTML = `The circumference of the circle is: ${circumference}`;
+        }
+
+
+    </script>
+
+<div class="section">
+    <h1 class="title is-5 has-text-centered">Preguntas Lab2:</h1>
+    <table id="customers_dos">
+      <tr>
+        <th>Preguntas</th>
+        <th>Respuestas</th>
+      </tr>
+      <tr>
+        <td>¿Qué diferencias y semejanzas hay entre Java y JavaScript?</td>
+        <td>Java y JavaScript son dos lenguajes de programación diferentes. Java es un lenguaje compilado y orientado a objetos, utilizado para desarrollar aplicaciones de escritorio, móviles y web, mientras que JavaScript es un lenguaje interpretado y de scripting, principalmente utilizado en el desarrollo web para agregar interactividad y dinamismo. Java es de tipado estático y JavaScript de tipado dinámico. Ambos lenguajes comparten algunas similitudes en cuanto a su herencia común del lenguaje C, como variables, funciones y programación orientada a objetos.
+        </td>
+      </tr>
+      <tr>
+        <td>¿Qué métodos tiene el objeto Date?</td>
+        <td>El objeto Date se utiliza para trabajar con fechas y horas. Tiene multiples funciones como las son:
+            <h3>Get: Regresa de forma numerica el valor deseado</h3>
+            <ul>
+                <li>getDate()</li>
+                <li>getHours()</li>
+                <li>getMonth()</li>
+            </ul>
+            <h3>To: Cambia el formato de le fecha</h3>
+            <ul>
+                <li>toTimeString()</li>
+                <li>toLocaleDateString()</li>
+                <li>toLocaleTimeString()</li>
+            </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>¿Qué métodos tienen los arreglos?</td>
+        <td>Los métodos más comunes que tienen los arreglos en JavaScript incluyen concat(), filter(), find(), forEach(), includes(), indexOf(), join(), map(), pop(), push(), reverse(), shift(), slice(), sort(), splice(), toString(), y unshift(). Estos métodos permiten realizar diversas operaciones en los arreglos, como agregar, eliminar o modificar elementos, ordenar los elementos, ejecutar funciones para cada elemento, y mucho más.</td>
+      </tr>
+      <tr>
+        <td>¿Cómo se declara una variable con alcance local dentro de una función?</td>
+        <td>Para declarar una variable de forma local podemos hacer uso de cualquieras de las 3 "keyword" que tenemos disponible ya sea let, const o var. Estas tres variables no tienen el mismo alcance entre si, pero podemos usarlas para limitar el alcance de cualquier variable a una funcion. El metodo de var es mas antiguo, const es para definir una variabale cuyo su valor no podra ser modificado despues de su declaracion y let tiene un alcance distinto donde tambien se limita a un bloque.</td>
+      </tr>
+      <tr>
+        <td>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</td>
+        <td>Utilizar variables globales dentro de funciones en JavaScript puede tener implicaciones negativas en el código, ya que puede generar confusión, colisiones de nombres, dificultades para rastrear errores y falta de modularidad. Se recomienda utilizar variables locales en lugar de variables globales siempre que sea posible, ya que son más precisas en cuanto a su alcance y uso dentro de una función, lo que hace que el código sea más fácil de entender, depurar y mantener.td>
+      </tr>
+
+    </table>
+  </div>
+
+</body>
+</html>

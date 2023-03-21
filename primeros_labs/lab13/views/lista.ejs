@@ -1,0 +1,66 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/menu.ejs') %>
+
+<div class="main_content">
+
+    <!-- <a href="/home/nuevo" class="button is-link is-rounded">Registra Perro</a> -->
+
+    <!-- <%- include('nuevo.ejs') %> -->
+    <%- include('historias.ejs') %>
+
+    <div id="content_section">
+        <% for (let usuario of usuarios) { %>
+
+            <div class="card">
+                <div class="top">
+                    <div class="userDeatils">
+                        <div class="profileImg">
+                            <img src="<%= usuario.pp %>" alt="user" class="cover">
+                        </div>
+                        <h3 class='has-text-white size95'>
+                        <%= usuario.nombre %><br><span style="font-size: 0.80em; font-weight: 400;"><%= usuario.escuela %></span></h3>
+                        <p class="point">•</p>
+                        <p style="color: #A8A8A8; margin-bottom: 16px;">1h</p>
+                    </div>
+                    <div class="dot">
+                        <img src="/images/icons/more.png" alt="dot">
+                    </div>
+                </div>
+                <div class="imgBg">
+
+                    <img src="<%= usuario.image %>" alt="bg" class="cover">
+                </div>
+                <div class="btns">
+                    <div class="left">
+                        <img src="/images/icons/heart.png" alt="heart" class="heart" onclick="likeButton()">
+                        <img src="/images/icons/chat.png" alt="comment" style="max-width: 24px;
+            cursor: pointer; margin-right: 8px;">
+                        <img src="/images/icons/send.png" alt="share">
+                    </div>
+                    <div class="right">
+                        <img src="/images/icons/save-instagram.png" alt="bookmark">
+                    </div>
+                </div>
+                <h4 class="has-text-white likes"><%= usuario.likes %> likes</h4>
+                <h4 class="has-text-white message size95">
+                    <b class="has-text-white"><%= usuario.user %></b>
+                    <%= usuario.descripcion %>
+                </h4>
+                <h4 class="comments">View all 546 comments</h4>
+                <div class="addComments">
+                    <!-- <div class="userImg">
+                        <img src="<%= usuario.pp %>" alt="user" class="cover">
+                    </div> -->
+                    <input type="text" class="text" placeholder="Add a comment...">
+                </div>
+
+                <div class="border">
+
+                </div>
+            </div>
+
+        <% } %>
+    </div>
+</div>
+
+<%- include('includes/suggestions.ejs') %>
