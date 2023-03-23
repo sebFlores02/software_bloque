@@ -41,7 +41,7 @@ router.get('/', (request, response, next) => {
             <div class="inputs-container">
                 <input type="password" name="password" placeholder="Password">
             </div>
-            <a class="login-button" href="/home" target="_blank">Log In</a>
+            <a class="login-button" href="/home">Log In</a>
 
             <div class="or-container">
                 <div class="line"></div>

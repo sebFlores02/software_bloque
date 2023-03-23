@@ -1,4 +1,4 @@
-const Usuario = require('../models/usuarios.model');
+const Usuario = require('../models/usuario.model');
 const bcrypt = require('bcryptjs');
 
 exports.get_login = (request, response, next) => {
@@ -27,9 +27,23 @@ exports.post_login = (request, response, next) => {
                 if(doMatch) {
                     request.session.isLoggedIn = true;
                     request.session.nombre = rows[0].nombre;
-                    return request.session.save(err => {
-                        response.redirect('/perros');
-                    });
+                    Usuario.fetchPrivilegios(rows[0].username)
+                    .then(([consulta_privilegios, fieldData]) => {
+                        console.log(consulta_privilegios);
+
+                        const privilegios = [];
+                        for(let privilegio of consulta_privilegios) {
+                            privilegios.push(privilegio.nombre);
+                        }
+
+                        request.session.privilegios = privilegios
+                        console.log(request.session.privilegios);
+
+                        return request.session.save(err => {
+                            response.redirect('/perros');
+                        });
+                    })
+                    .catch((error) => {console.log(error)})
 
                 } else {
                     request.session.mensaje = "Usuario y/o contraseña incorrectos";
