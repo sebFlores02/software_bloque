@@ -1,5 +1,6 @@
 const Usuario = require('../models/usuario.model');
 const bcrypt = require('bcryptjs');
+// const bcrypt = require('bcrypt');
 
 exports.get_login = (request, response, next) => {
 
@@ -40,21 +41,21 @@ exports.post_login = (request, response, next) => {
                         console.log(request.session.privilegios);
 
                         return request.session.save(err => {
-                            response.redirect('/perros');
+                            response.redirect('/home');
                         });
                     })
                     .catch((error) => {console.log(error)})
 
                 } else {
                     request.session.mensaje = "Usuario y/o contraseña incorrectos";
-                    response.redirect('/usuarios/login');
+                    response.redirect('/usuario/login');
                 }
             })
             .catch((error) => console.log(error));
 
         } else {
             request.session.mensaje = "Usuario y/o contraseña incorrectos";
-            response.redirect('/usuarios/login');
+            response.redirect('/usuario/login');
         }
     })
     .catch((error) => {
@@ -76,16 +77,17 @@ exports.post_signup = (request, response, next) => {
         nombre: request.body.nombre,
         username: request.body.username,
         password: request.body.password,
+        escuela: request.body.escuela,
     });
 
     usuario.save()
     .then(([rows, fieldData]) => {
-        response.redirect('/usuarios/login');
+        response.redirect('/usuario/login');
     }).catch((error) => {console.log(error)});
 };
 
 exports.logout = (request, response, next) => {
     request.session.destroy(() => {
-        response.redirect('/usuarios/login'); //Este código se ejecuta cuando la sesión se elimina.
+        response.redirect('/usuario/login'); //Este código se ejecuta cuando la sesión se elimina.
     });
 };
