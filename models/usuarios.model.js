@@ -1,11 +1,12 @@
-const db = require('../util/database')
+const db = require('../util/database');
 const bcrypt = require('bcryptjs');
 
 module.exports = class Usuario {
+
     constructor(nuevo_usuario) {
-        this.nombre = nuevo_usuario.nombre || `Sebastian`;
-        this.username = nuevo_usuario.username || `seb.flores2002`;
-        this.password = nuevo_usuario.password || `12345678`;
+        this.nombre = nuevo_usuario.nombre || 'John Doe';
+        this.username = nuevo_usuario.username || 'johndoe';
+        this.password = nuevo_usuario.password || 'johndoejohndoe';
     }
 
     save() {
@@ -21,7 +22,7 @@ module.exports = class Usuario {
 
     static fetchOne(username){
         return db.execute(`
-            SELECT nombre
+            SELECT *
             FROM usuarios
             WHERE username = ?
         `, [username]);
