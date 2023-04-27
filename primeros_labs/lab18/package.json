@@ -2,9 +2,9 @@
   "name": "software_bloque",
   "version": "1.0.0",
   "description": "ejemplos clase",
-  "main": "lab18.js",
+  "main": "lab26.js",
   "scripts": {
-    "start": "nodemon lab18.js",
+    "start": "nodemon lab26.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
